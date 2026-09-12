@@ -1,8 +1,10 @@
+package za.ac.iie.chatapppart01;
+
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package za.ac.iie.prog6112.chatapppart01;
+
 
 /**
  * 
@@ -38,7 +40,7 @@ public boolean checkPasswordComplexity(String password)  {
     hasCapital = true; 
     }else if (Character.isDigit(c)) {
        hasNumber = true;
-   }else if (Character.isletterOrDigit(c)) {
+   }else if (Character.isLetterOrDigit(c)) {
      hasSpecial = true;
 }
     }
@@ -47,17 +49,18 @@ return password.length() >=8 && hasNumber&& hasCapital && hasSpecial;
    
 }
 //Cellphone validation should contain not more than 12 character
-public boolean checkCellPhoneNumber (String phoneNumber) {
-    return phoneNumber.startsWith("+27") && phoneNumber.length() <= 12;
+public boolean checkCellPhoneNumber (String phone) {
+    return phone.startsWith("+27") && phone.length() <= 12;
 }
 }
 //register validation
 public String registerUser(String username , String password , String phoneNumber){
-    if (!checkUserName (username)){
+    
+    if(!checkUserName(username)){
         return "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.";
     }
     
-    if (!checkPasswordComplexity(password)){
+    if(!checkPasswordComplexity(password)){
         return"Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number,and a special character.";
     }
     
@@ -72,11 +75,11 @@ public String registerUser(String username , String password , String phoneNumbe
     return"User registered successfully.";
 }
  public boolean loginUser(String username, String password) {
-     return this.username.equals(username)&& this.password.equals(password);
+     return this.username.equals(username)&&this.password.equals(password);
 }
  public String returnloginStatus(boolean success) {
      if (success){
-         return "Welcome " + username + "it is great to see you again.";
+         return "Welcome " + username +"it is great to see you again.";
      }else {
          return "Username or password incorrect, please try again.";
      }
