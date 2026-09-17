@@ -45,7 +45,7 @@ return password.length() >=8 && hasNumber&& hasCapital && hasSpecial;
 public boolean checkCellPhoneNumber (String phoneNumber) {
     return phoneNumber.startsWith("+27") && phoneNumber.length() <= 12;
 }
-}
+
 //register validation
 public String registerUser(String username , String password , String phoneNumber){
     if (!checkUserName (username)){
@@ -75,6 +75,6 @@ public String registerUser(String username , String password , String phoneNumbe
      }else {
          return "Username or password incorrect, please try again.";
      }
- }
+ }}
    
 

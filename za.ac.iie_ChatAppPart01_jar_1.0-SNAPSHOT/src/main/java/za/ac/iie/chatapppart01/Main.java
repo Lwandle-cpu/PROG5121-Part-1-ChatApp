@@ -36,7 +36,7 @@ public class Main {
         //Show the registration message
         System.out.println(response);
         
-        if (response.equals("User registered successfully ")) {
+        if (response.trim().equals("User registered successfully.")) {
             break;
         }
         System.out.println("Please try again");
