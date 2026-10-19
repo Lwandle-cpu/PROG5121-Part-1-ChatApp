@@ -199,31 +199,35 @@ The project includes tests for both successful and unsuccessful scenarios. This 
 
 # ChatApp Part 2
 
+# ChatApp – PROG5121 Programming Project
+
 ## 1. Project Overview
 
-ChatApp is a Java-based messaging application developed as part of the PROG5121 programming project. The application allows users to register an account, log in, and send, store, or disregard messages
+ChatApp is a Java messaging application developed for the PROG5121 programming project. It allows users to register an account, log in, and send, disregard, or store messages.
 
-The project object-oriented programming, input validation, methods, loops, conditional statements, and file handling in Java.
+The project demonstrates how Java can be used to develop a simple messaging system. It also makes use of object-oriented programming, input validation, loops, conditional statements, methods, and file handling.
 
 ## 2. Project Objectives
 
-The main objectives of ChatApp are to:
+The purpose of this project is to develop a messaging application that can:
 
-- Register users using their personal and login details.
-- Validate usernames, passwords, and cellphone numbers.
+- Register users using their personal details and login information.
+- Check whether usernames, passwords, and cellphone numbers meet the required rules.
 - Allow registered users to log in.
 - Create messages with unique message IDs.
-- Validate recipient cellphone numbers and message length.
-- Generate a message hash for identification.
+- Check recipient cellphone numbers and message lengths.
+- Generate a hash for each message.
 - Allow users to send, disregard, or store messages.
-- Count successfully sent messages.
+- Keep track of the number of successfully sent messages.
 - Save stored messages in a JSON file.
 
 ## 3. Technologies Used
 
+The following tools and technologies were used to develop the application:
+
 - **Programming language:** Java
 - **IDE:** NetBeans
-- **Project management:** Apache Maven
+- **Build tool:** Apache Maven
 - **Testing framework:** JUnit 5
 - **File storage:** JSON
 
@@ -231,67 +235,70 @@ The main objectives of ChatApp are to:
 
 ### Main.java
 
-The `Main` class starts the application and controls the program flow. It allows users to register, log in, select menu options, enter messages, and choose how their messages should be processed.
+The `Main` class is the starting point of the application. It guides the user through registration and login and displays the available menu options. It also allows the user to choose how messages should be handled.
 
 ### Login.java
 
-The `Login` class manages user registration and login. It validates the user's username, password, and cellphone number and checks whether the login details match the registered information.
+The `Login` class handles user registration and login. It checks the username, password, and cellphone number to make sure they meet the required conditions. It also checks whether the login details entered by the user match the registered details.
 
 ### Message.java
 
-The `Message` class manages message creation and processing. It generates message IDs and message hashes, validates recipient numbers and message lengths, processes message actions, counts successfully sent messages, and stores messages in a JSON file.
+The `Message` class is responsible for creating and managing messages. It generates message IDs and message hashes, checks message details, and allows users to send, disregard, or store messages. It also keeps count of successfully sent messages and saves stored messages to a JSON file.
 
 ### MessageTest.java
 
-The `MessageTest` class is used to test the message functionality. Unit tests can verify message ID validation, recipient cellphone number validation, message length validation, message hashes, message processing, and the total number of sent messages.
+The `MessageTest` class is used to test the methods in the `Message` class. These tests help check whether message IDs, cellphone numbers, message lengths, hashes, and message actions work as expected. They can also be used to check the count of sent messages.
 
 ## 5. Application Features
 
 ### User Registration and Login
 
-Users enter their first name, last name, username, password, and cellphone number. The application checks the required details before allowing the user to log in.
+When using the application, users must enter their first name, last name, username, password, and cellphone number. The application checks the information before allowing the user to proceed with the login process.
 
 ### Message Processing
 
-After logging in, the user specifies the number of messages they wish to process. Each message receives a unique ten-digit ID and a generated hash.
+After logging in successfully, the user can choose how many messages they want to process. Each message is assigned a unique ten-digit ID and a generated hash.
 
-Messages must pass the required validation checks before they can be processed.
+The application checks the message details before allowing the message to be processed. This helps prevent invalid information from being accepted.
 
-### Message Menu
+### Main Menu
 
-The application provides the following main menu options:
+The application displays a menu with the following options:
 
-1. **Send Messages** – Create and process messages.
-2. **Show recently sent messages** – This feature is planned for future implementation.
-3. **Quit** – Exit the application.
+1. **Send Messages** – Allows the user to create and process messages.
+2. **Show Recently Sent Messages** – This feature is planned for a future version.
+3. **Quit** – Closes the application.
 
-When creating a message, the user can select one of these actions:
+When creating a message, the user can choose one of the following actions:
 
-1. Send Message
-2. Disregard Message
-3. Store Message
+1. **Send Message** – Processes the message as a sent message.
+2. **Disregard Message** – Discards the message.
+3. **Store Message** – Saves the message for later use.
 
-Successfully sent messages are counted, and stored messages are written to `storedMessages.json`.
+The application counts successfully sent messages, while stored messages are saved in a file named `storedMessages.json`.
 
 ## 6. Message Validation
 
-The application applies the following validation rules:
+The application uses validation rules to check the information entered by the user.
 
 - **Message ID:** Must contain exactly ten digits.
-- **Recipient cellphone number:** Must use an international format, beginning with a plus sign and a valid country calling code.
-- **Message length:** Must not exceed 250 characters.
-- **Username and password:** Must satisfy the registration requirements implemented in the `Login` class.
+- **Recipient cellphone number:** Must follow the required international format, starting with a plus sign and a valid country calling code.
+- **Message length:** Must not be longer than 250 characters.
+- **Username and password:** Must meet the registration requirements defined in the `Login` class.
 
-Invalid messages are rejected with an appropriate error message.
+If a message does not meet the required conditions, the application rejects it and displays an appropriate error message.
 
 ## 7. How to Run the Application
 
-1. Open NetBeans.
+To run the project in NetBeans, follow these steps:
+
+1. Open NetBeans on your computer.
 2. Open the `ChatAppPart01` project.
-3. Confirm that the Java source files use the correct package name: `com.mycompany.chatapppart1`.
-4. Check that `Main.java`, `Login.java`, and `Message.java` are located in the appropriate source package
+3. Check that the Java source files use the package name `com.mycompany.chatapppart1`.
+4. Make sure that `Main.java`, `Login.java`, and `Message.java` are inside the correct source package.
+5. Check that the Maven dependencies are configured correctly, including JUnit 5 for testing.
+6. Run the project using `Main.java` and follow the instructions displayed in the console.
 
 ## Version
 
 **1.0-SNAPSHOT**
-
